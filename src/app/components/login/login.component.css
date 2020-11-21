@@ -1,0 +1,34 @@
+.container {
+    /* width: 50%; */
+    /* border: 1px solid red; */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 30%;
+}
+
+.example-card {
+    /* max-width: 50%; */
+    /* margin: 0 auto; */
+}
+
+.card_content {
+    width: 100%;
+}
+
+.elements-width {
+   min-width: 100%;
+    /* width: 100%; */
+}
+
+.title-display {
+    float: left;
+}
+
+.active {
+    cursor: progress;
+}
