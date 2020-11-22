@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -14,7 +15,13 @@ export class LoginComponent implements OnInit {
   password: string = "password";
   type: string = "password";
 
-  constructor(public router: Router, private route: ActivatedRoute) { }
+  loginForm = this.fb.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+    rememberMe: [true]
+  })
+
+  constructor(public router: Router, public fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -25,8 +32,14 @@ export class LoginComponent implements OnInit {
     this.type = this.visibility ? "text" : "password";
   }
 
-  Login() {
-    
+  Login({ value, valid }) {
+    console.log(value, valid);
+    if(valid) {
+      this.router.navigate(['dashboard'])
+          .then(()=> {
+            console.log('Navigated to the dashboard!');
+          })
+    }
   }
 
 }

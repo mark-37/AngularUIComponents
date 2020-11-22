@@ -5,6 +5,7 @@ import { MaterialsModule } from '../materials/materials.module';
 import { RegisterComponent } from '../components/register/register.component';
 import { RouterModule } from '@angular/router';
 import { ForgotPasswordComponent } from '../components/forgot-password/forgot-password.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ForgotPasswordComponent } from '../components/forgot-password/forgot-pa
   ],
   imports: [
     MaterialsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: []
 })
