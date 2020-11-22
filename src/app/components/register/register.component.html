@@ -1,1 +1,40 @@
-<p>register works!</p>
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="Register(registerForm)" class="box">
+        <mat-card> <!--  formGroupName="loginForm" -->
+            <mat-card-content class="card_content">
+               <section>
+                    <p class="mat-headline title-display">Register</p>
+               </section>
+               <mat-form-field appearance="outline" class="elements-width">
+                    <mat-label>Display Name</mat-label>
+                    <input matInput placeholder="DisplayName" type="text" formControlName="displayName" required>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" matSuffix>person</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="elements-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput [placeholder]="Placeholder" formControlName="email" required>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" matSuffix>email</mat-icon>
+                </mat-form-field>
+                <br/>
+                <mat-form-field appearance="outline" class="elements-width">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" [type]="type" formControlName="password" required>
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" matSuffix (click)="toggle()">{{ visibility ? "visibility_off" : "visibility" }}</mat-icon>
+                </mat-form-field>
+                <br/>
+                <!-- <section>
+                    <mat-checkbox class="example-margin" color="accent" formControlName="rememberMe">Remember me</mat-checkbox>
+                    <a routerLink="/forgot-password" style="float: right;" class="mat-body-strong">Forgot Password</a>
+                </section>
+                <br/> -->
+                <section>
+                    <button mat-raised-button color="primary" class="elements-width" type="submit" [disabled]="this.registerForm.invalid">Register</button>
+                </section>
+                <br/>
+                <section style="text-align: center;">
+                    <span class="mat-body">Already have an account? <a routerLink="/login">Login</a></span> 
+                </section>
+            </mat-card-content>
+        </mat-card>    
+    </form>      
+</div>
